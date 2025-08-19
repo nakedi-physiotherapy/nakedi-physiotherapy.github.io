@@ -263,13 +263,16 @@ img { max-width: 100%; display: block; }
   grid-template-columns: .9fr 1.1fr;
   gap: clamp(1.25rem, 3vw, 3rem);
   align-items: center;
+  padding: 60px;
 }
 .physiotherapist-image img{
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  width: 100%;
+  width: 300px;
+  height: auto;
   border-radius: 50%;
   box-shadow: var(--shadow-lg);
+  margin: 0 auto;
 }
 .physiotherapist-info h3{
   margin: 0 0 .25rem;
@@ -391,7 +394,9 @@ section.is-visible{
 @media (max-width: 980px){
   .hero-content{ grid-template-columns: 1fr; }
   .about-content{ grid-template-columns: 1fr; }
-  .physiotherapist-content{ grid-template-columns: 1fr; }
+  .physiotherapist-content{
+    grid-template-columns: 1fr;
+  }
   .contact-content{ grid-template-columns: 1fr; }
 }
 
