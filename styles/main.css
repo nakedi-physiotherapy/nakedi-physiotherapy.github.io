@@ -1,103 +1,444 @@
-/* Main CSS for Nakedi Physiotherapy Homepage */
+/* ===== Reset & root ===== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background: #f7f9fa;
-  color: #222;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #0f172a; /* slate-900 */
+  background: #ffffff;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
-header {
-  background: #2e8b57;
-  color: #fff;
-  padding: 2rem 0 1rem 0;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+img { max-width: 100%; display: block; }
+
+:root{
+  --blue-900: #0b2b6b;
+  --blue-800: #12398a;
+  --blue-700: #1e3a8a;  /* primary */
+  --blue-600: #2251b1;
+  --blue-500: #3b82f6;  /* accent */
+  --blue-100: #dbeafe;  /* light bg */
+  --slate-900:#0f172a;
+  --slate-700:#334155;
+  --slate-200:#e2e8f0;
+  --slate-100:#f1f5f9;
+  --white:#fff;
+  --radius-lg: 16px;
+  --radius: 12px;
+  --shadow-lg: 0 12px 40px rgba(2,12,36,0.12);
+  --shadow: 0 8px 24px rgba(2,12,36,0.10);
 }
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
+
+/* Containers */
+.container{
+  width: min(1200px, 92vw);
+  margin-inline: auto;
 }
-nav {
-  margin-top: 1rem;
+
+/* Visually hidden */
+.sr-only {
+  position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
 }
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1.5rem;
-  font-weight: 500;
-  transition: color 0.2s;
+
+/* Skip link */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; padding: .75rem 1rem; background: var(--blue-700); color: var(--white); border-radius: .5rem; z-index:9999;
 }
-nav a:hover {
-  color: #ffe082;
+.skip-link:focus { left: .5rem; top: .5rem; }
+
+/* ===== Header / Nav ===== */
+.site-header{
+  position: sticky; top: 0; z-index: 999;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
-.hero {
-  display: flex;
-  flex-direction: column;
+
+.header-content{
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  padding: 3rem 1rem 2rem 1rem;
-  background: #e0f2f1;
+  gap: 1rem;
+  padding: .85rem 0;
 }
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+
+.logo{
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
 }
-.hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  text-align: center;
+.logo-img{
+  width: 56px; height: 56px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow);
 }
-.services {
+.logo-text{
+  color: var(--blue-700);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: .2px;
+}
+
+/* Nav */
+.primary-nav{
+  justify-self: end;
   display: flex;
+  align-items: center;
+  gap: .5rem;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem 1rem;
+}
+.primary-nav a{
+  text-decoration: none;
+  color: var(--slate-900);
+  padding: .55rem .9rem;
+  border-radius: .5rem;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.primary-nav a:hover{ background: var(--blue-100); color: var(--blue-700); }
+.primary-nav a.active{ background: var(--blue-700); color: var(--white); }
+
+/* Mobile nav toggle */
+.nav-toggle{
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: .5rem;
+  margin-left: auto;
+}
+.nav-toggle-bar{
+  display: block;
+  width: 26px; height: 3px;
+  background: var(--blue-700);
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* ===== Hero ===== */
+.hero{
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: linear-gradient(135deg, var(--blue-100) 0%, #ffffff 50%, var(--blue-100) 100%);
+}
+.hero-content{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+}
+.hero-text h1{
+  margin: 0 0 .5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  color: var(--blue-700);
+}
+.hero-text p{
+  color: var(--slate-700);
+  font-size: 1.125rem;
+  margin: 0 0 1.25rem;
+}
+.hero-bullets{
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--slate-700);
+}
+.hero-bullets li{ margin: .25rem 0; }
+
+.hero-image img{
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Buttons */
+.btn{
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: .75rem;
+  padding: .9rem 1.25rem;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  will-change: transform;
+  border: 2px solid transparent;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+
+.btn-primary{
+  background: var(--blue-700);
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(30,58,138,.22);
+}
+.btn-primary:hover{ background: var(--blue-800); }
+
+.btn-outline{
+  background: transparent;
+  color: var(--blue-700);
+  border-color: var(--blue-700);
+}
+.btn-outline:hover{ background: var(--blue-700); color: var(--white); }
+
+/* Section headers */
+.section-header{
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+.section-header h2{
+  margin: 0 0 .4rem;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  color: var(--blue-700);
+}
+.section-header p{
+  color: var(--slate-700);
+  margin: 0;
+}
+
+/* About */
+.about{ padding: clamp(2.5rem, 6vw, 5rem) 0; background: #fff; }
+.about-content{
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: center;
+}
+.about-text p{ margin: 0 0 1rem; }
+.checks{ margin: 1rem 0 0; padding: 0; list-style: none; }
+.checks li{
+  padding-left: 1.75rem;
+  position: relative;
+  margin: .45rem 0;
+}
+.checks li::before{
+  content: "✓";
+  position: absolute; left: 0; top: 0;
+  color: var(--blue-500); font-weight: 900;
+}
+.about-image img{
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+/* Services */
+.services{ padding: clamp(2.5rem, 6vw, 5rem) 0; background: var(--slate-100); }
+.services-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.service-card{
   background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.service-card {
-  background: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  padding: 2rem 1.5rem;
-  max-width: 300px;
-  text-align: center;
-  transition: transform 0.2s;
+.service-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.service-card img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
 }
-.service-card:hover {
-  transform: translateY(-5px) scale(1.03);
+.service-card h3{
+  margin: 1rem 1rem .5rem;
+  color: var(--blue-700);
+  font-size: 1.15rem;
 }
-.service-card h3 {
-  margin-top: 0;
-  color: #2e8b57;
+.service-card p{
+  margin: 0 1rem 1.25rem;
+  color: var(--slate-700);
 }
-.about {
-  padding: 2rem 1rem;
-  background: #e8f5e9;
-  text-align: center;
+
+/* Physiotherapist */
+.physiotherapist{ padding: clamp(2.5rem, 6vw, 5rem) 0; background: #fff; }
+.physiotherapist-content{
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: center;
 }
-.about h2 {
-  color: #2e8b57;
+.physiotherapist-image img{
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
 }
-.contact {
-  padding: 2rem 1rem;
+.physiotherapist-info h3{
+  margin: 0 0 .25rem;
+  font-size: 1.6rem;
+  color: var(--blue-700);
+}
+.practice-number{
+  color: var(--blue-500);
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+.physiotherapist-info p{ margin: 0 0 1rem; color: var(--slate-700); }
+
+/* Conditions */
+.conditions{ padding: clamp(2.5rem, 6vw, 5rem) 0; background: var(--slate-100); }
+.conditions-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1.25rem;
+}
+.condition-category{
   background: #fff;
-  text-align: center;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.contact h2 {
-  color: #2e8b57;
+.condition-category:hover{ transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.condition-category h3{
+  margin: 0 0 .75rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--blue-100);
+  color: var(--blue-700);
+  font-size: 1.1rem;
 }
-footer {
-  background: #2e8b57;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-  font-size: 0.95rem;
+.condition-category ul{
+  list-style: none; padding: 0; margin: 0;
 }
-@media (max-width: 900px) {
-  .services {
+.condition-category li{
+  padding: .45rem 0 .45rem 1.5rem;
+  border-bottom: 1px solid var(--slate-200);
+  color: var(--slate-700);
+  position: relative;
+}
+.condition-category li:last-child{ border-bottom: 0; }
+.condition-category li::before{
+  content: "✓";
+  position: absolute; left: 0; top: .45rem;
+  color: var(--blue-500); font-weight: 900;
+}
+
+/* Contact */
+.contact{ padding: clamp(2.5rem, 6vw, 5rem) 0; background: #fff; }
+.contact-content{
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: center;
+}
+.contact-info{
+  display: grid;
+  gap: 1rem;
+}
+.contact-item h3{
+  margin: 0 0 .25rem;
+  color: var(--blue-700);
+}
+.contact-item p{ margin: 0 0 .35rem; color: var(--slate-700); }
+.contact-item a{
+  color: var(--blue-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+.contact-item a:hover{ text-decoration: underline; }
+.contact-cta{ margin-top: .5rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+
+.contact-image img{
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Footer */
+.site-footer{
+  background: var(--blue-700);
+  color: var(--white);
+  padding: 1.25rem 0;
+}
+.footer-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.back-to-top{
+  display: inline-flex;
+  width: 36px; height: 36px;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  color: #fff; text-decoration: none; font-weight: 900;
+}
+.back-to-top:hover{ background: rgba(255,255,255,.22); }
+
+/* Reveal on scroll animation (sections) */
+section{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+section.is-visible{
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px){
+  .hero-content{ grid-template-columns: 1fr; }
+  .about-content{ grid-template-columns: 1fr; }
+  .physiotherapist-content{ grid-template-columns: 1fr; }
+  .contact-content{ grid-template-columns: 1fr; }
+}
+
+/* Replace the entire mobile nav block */
+@media (max-width: 860px){
+  .nav-toggle{ display: inline-block; z-index: 1001; }
+
+  /* Was: display:none; now we keep it rendered for animation */
+  .primary-nav{
+    position: absolute;
+    inset: 100% 0 auto 0;        /* full width, just below header */
+    background: #fff;
+    padding: .5rem .75rem .85rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 10px 24px rgba(2,12,36,0.08);
+    border-radius: 0 0 16px 16px;
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: .25rem;
+    z-index: 1000;
+
+    /* Animation (top -> bottom) */
+    opacity: 0;
+    transform: translateY(-12px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .25s ease, opacity .25s ease, visibility 0s linear .25s;
   }
+
+  .primary-nav.is-open{
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  .primary-nav a{
+    display: block;
+    width: 85vw;
+    padding: .9rem .85rem;
+    border-radius: .6rem;
+  }
+}
+
+/* Small tweaks */
+@media (max-width: 480px){
+  .logo-text{ font-size: 1.05rem; }
+  .service-card img, .contact-image img { aspect-ratio: 16/10; height: auto; }
 }

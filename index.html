@@ -1,56 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nakedi Physiotherapy</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <!-- Meta basics -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary Meta Tags -->
+  <title>Nakedi Physiotherapy — Professional Physiotherapy Services</title>
+  <meta name="title" content="Nakedi Physiotherapy — Professional Physiotherapy Services" />
+  <meta name="description" content="Accessible, evidence-based physiotherapy for all ages. Orthopaedic manual therapy, neurological rehab, sports rehab, post-surgical care, and more in Pretoria." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nakedi Physiotherapy — Professional Physiotherapy Services" />
+  <meta property="og:description" content="Accessible, evidence-based physiotherapy for all ages in Pretoria." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:url" content="https://example.com" />
+
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" href="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=128&auto=format&fit=crop" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-  <header>
-    <h1>Nakedi Physiotherapy</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-content container">
+      <a class="logo" href="#home" aria-label="Nakedi Physiotherapy - Home">
+        <img
+          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=100&auto=format&fit=crop"
+          alt=""
+          class="logo-img"
+          width="56" height="56" />
+        <span class="logo-text">Nakedi Physiotherapy</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="primary-navigation" class="primary-nav" role="navigation" aria-label="Primary">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#physiotherapist">Physiotherapist</a>
+        <a href="#conditions">Conditions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
-  <section class="hero" id="home">
-    <h2>Empowering Your Recovery</h2>
-    <p>Welcome to Nakedi Physiotherapy, where your health and well-being are our top priority. We provide personalized physiotherapy care to help you move better, feel better, and live better.</p>
-  </section>
-  <section class="services" id="services">
-    <div class="service-card">
-      <h3>Musculoskeletal Therapy</h3>
-      <p>Expert treatment for joint, muscle, and bone conditions to restore movement and reduce pain.</p>
+
+  <main id="home" class="hero" role="main">
+    <div class="hero-content container">
+      <div class="hero-text">
+        <h1>Making Physiotherapy Accessible to All</h1>
+        <p>
+          A young practice with growing experience, offering affordable, evidence‑based care for patients and families across all ages and needs.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Book Appointment</a>
+          <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+
+        <ul class="hero-bullets" aria-label="Highlights">
+          <li>Patient‑centred, functional treatment plans</li>
+          <li>Orthopaedic manual therapy & rehabilitation</li>
+          <li>Hydrotherapy and sports injury care</li>
+        </ul>
+      </div>
+
+      <figure class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=1200&auto=format&fit=crop"
+          alt="Physiotherapist helping a patient with a stretch" />
+        <figcaption class="sr-only">Professional physiotherapy session</figcaption>
+      </figure>
     </div>
-    <div class="service-card">
-      <h3>Sports Injury Rehab</h3>
-      <p>Comprehensive rehabilitation for sports injuries, from assessment to full recovery and prevention.</p>
-    </div>
-    <div class="service-card">
-      <h3>Post-Surgical Rehab</h3>
-      <p>Guided recovery programs after surgery to regain strength, mobility, and confidence.</p>
-    </div>
-    <div class="service-card">
-      <h3>Pediatric Physiotherapy</h3>
-      <p>Gentle, effective care for children with developmental, neurological, or musculoskeletal needs.</p>
-    </div>
-  </section>
+  </main>
+
   <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>Nakedi Physiotherapy is dedicated to providing evidence-based, compassionate care. Our experienced team tailors each treatment plan to your unique needs, ensuring the best possible outcomes for every patient.</p>
+    <div class="container">
+      <header class="section-header">
+        <h2>About Us</h2>
+        <p>Care that empowers you to take charge of your health and well‑being.</p>
+      </header>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Nakedi Physiotherapy is a young practice with growing experience. Our aim is simple:
+            make physiotherapy accessible to all populations by offering affordable care without compromising on quality.
+          </p>
+          <p>
+            We provide evidence‑based treatments and compassionate guidance. From the first assessment to your final session,
+            our focus is on restoring function, reducing pain, and helping you move with confidence.
+          </p>
+          <ul class="checks">
+            <li>Evidence‑based, personalised programs</li>
+            <li>Clear education and home exercises</li>
+            <li>Family‑friendly, accessible pricing</li>
+          </ul>
+        </div>
+
+        <figure class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=1000&auto=format&fit=crop"
+            alt="Modern physiotherapy clinic interior" />
+          <figcaption class="sr-only">Modern physiotherapy clinic</figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <header class="section-header">
+        <h2>Our Services</h2>
+        <p>Comprehensive physiotherapy for all conditions and ages.</p>
+      </header>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&auto=format&fit=crop" alt="Orthopaedic manual therapy session" />
+          <h3>Orthopaedic Manual Therapy</h3>
+          <p>Hands‑on care for joints, muscles, and bones to restore mobility and reduce pain.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=900&auto=format&fit=crop" alt="Hydrotherapy pool" />
+          <h3>Hydrotherapy</h3>
+          <p>Water‑based rehabilitation in a controlled environment to support recovery after injury or surgery.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=900&auto=format&fit=crop" alt="Neurological rehabilitation exercise" />
+          <h3>Neurological Rehabilitation</h3>
+          <p>Targeted therapy for conditions affecting the nervous system and brain function.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&auto=format&fit=crop" alt="Athlete performing rehab" />
+          <h3>Sports Rehabilitation</h3>
+          <p>Assessment and treatment for sports injuries with return‑to‑play guidance.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=900&auto=format&fit=crop" alt="Post-surgical rehab session" />
+          <h3>Post‑Surgical Rehabilitation</h3>
+          <p>Progressive programs to restore strength, range of motion, and function following surgery.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=900&auto=format&fit=crop" alt="Pain management techniques" />
+          <h3>Pain Management</h3>
+          <p>Evidence‑based approaches for chronic and acute pain, tailored to your lifestyle.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=900&auto=format&fit=crop" alt="Cardiorespiratory physiotherapy equipment" />
+          <h3>Cardiorespiratory Physiotherapy</h3>
+          <p>Treatment for conditions impacting the heart, lungs, and breathing.</p>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=900&auto=format&fit=crop" alt="Paediatric physiotherapy care" />
+          <h3>Paediatrics Therapy</h3>
+          <p>Gentle, effective care for children with developmental or physical needs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="physiotherapist" id="physiotherapist">
+    <div class="container">
+      <header class="section-header">
+        <h2>Lead Physiotherapist</h2>
+      </header>
+
+      <div class="physiotherapist-content">
+        <figure class="physiotherapist-image">
+          <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop"
+            alt="Portrait of Bakang Nakedi, Lead Physiotherapist" />
+          <figcaption class="sr-only">Bakang Nakedi</figcaption>
+        </figure>
+
+        <div class="physiotherapist-info">
+          <h3>Bakang Nakedi</h3>
+          <p class="practice-number">Practice Number: 1069292</p>
+          <p>
+            I am an enthusiastic physiotherapist with a strong desire to serve. I love getting to know my patients and
+            identifying the root cause of the challenges they present with. My treatments are patient‑specific and functional.
+          </p>
+          <p>
+            I work with children through to older adults, treating conditions affecting the lungs, musculoskeletal system,
+            nervous system, bones and joints, and more.
+          </p>
+          <p>
+            I have a special interest in orthopaedic manual therapy, neurological and sports injury rehabilitation, and
+            post‑surgical recovery using hydrotherapy. Education is central to my practice — I empower patients to take
+            charge of their health so we can achieve their goals together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conditions" id="conditions">
+    <div class="container">
+      <header class="section-header">
+        <h2>Conditions We Treat</h2>
+        <p>Common areas we support in clinic and during guided home programs.</p>
+      </header>
+
+      <div class="conditions-grid">
+        <article class="condition-category">
+          <h3>Pain &amp; Musculoskeletal</h3>
+          <ul>
+            <li>Back pain</li>
+            <li>Neck pain</li>
+            <li>Osteoarthritis</li>
+            <li>Rheumatoid arthritis</li>
+            <li>Fibromyalgia</li>
+            <li>Soft tissue injuries</li>
+            <li>Poor posture</li>
+          </ul>
+        </article>
+
+        <article class="condition-category">
+          <h3>Spine &amp; Back</h3>
+          <ul>
+            <li>Spinal fusions</li>
+            <li>Disc herniation</li>
+            <li>Stenosis</li>
+            <li>SI joint dysfunction</li>
+            <li>Scoliosis</li>
+            <li>Radiculopathy</li>
+          </ul>
+        </article>
+
+        <article class="condition-category">
+          <h3>Shoulder &amp; Upper Limb</h3>
+          <ul>
+            <li>Shoulder impingement</li>
+            <li>Labral tear</li>
+            <li>Tennis/Golfer’s elbow</li>
+            <li>Carpal Tunnel Syndrome</li>
+            <li>Tendonitis</li>
+          </ul>
+        </article>
+
+        <article class="condition-category">
+          <h3>Hip &amp; Lower Limb</h3>
+          <ul>
+            <li>Hip replacements</li>
+            <li>Knee replacements</li>
+            <li>Meniscus injuries</li>
+            <li>Ankle ligament injuries</li>
+            <li>Plantar fasciitis</li>
+          </ul>
+        </article>
+
+        <article class="condition-category">
+          <h3>Neurological</h3>
+          <ul>
+            <li>Post‑stroke / CVA</li>
+            <li>Brain injuries</li>
+            <li>Spinal cord injuries</li>
+            <li>Multiple Sclerosis</li>
+            <li>Parkinson’s disease</li>
+            <li>Cerebral Palsy</li>
+          </ul>
+        </article>
+
+        <article class="condition-category">
+          <h3>Head &amp; Respiratory</h3>
+          <ul>
+            <li>Headaches</li>
+            <li>TMJ dysfunction</li>
+            <li>Bell’s Palsy</li>
+            <li>Upper respiratory infections</li>
+            <li>Balance problems</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:info@nakediphysio.com">info@nakediphysio.com</a></p>
-    <p>Phone: <a href="tel:+27123456789">+27 12 345 6789</a></p>
-    <p>Address: 123 Wellness Road, Pretoria, South Africa</p>
+    <div class="container">
+      <header class="section-header">
+        <h2>Contact Us</h2>
+        <p>We’d love to help — call, email, or send a message to book.</p>
+      </header>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>Phone</h3>
+            <p><a href="tel:+27680414802" rel="nofollow">+27 68 041 4802</a></p>
+          </div>
+
+          <div class="contact-item">
+            <h3>Email</h3>
+            <p><a href="mailto:nakediphysiotherapy@gmail.com">nakediphysiotherapy@gmail.com</a></p>
+          </div>
+
+          <div class="contact-item">
+            <h3>Locations</h3>
+            <p>147 Erich Mayer St, Pretoria North</p>
+            <p>118 Braam Pretorius St, Wonderboom</p>
+          </div>
+
+          <div class="contact-cta">
+            <a class="btn btn-primary" href="mailto:nakediphysiotherapy@gmail.com?subject=Appointment%20Request">
+              Book via Email
+            </a>
+            <a class="btn btn-outline" href="tel:+27680414802">Call Now</a>
+          </div>
+        </div>
+
+        <figure class="contact-image">
+          <img
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop"
+            alt="Friendly physiotherapy clinic reception" />
+          <figcaption class="sr-only">Clinic reception area</figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
-  <footer>
-    &copy; 2025 Nakedi Physiotherapy. All rights reserved.
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Nakedi Physiotherapy. All rights reserved.</p>
+      <p>Practice Number: 1069292</p>
+      <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+    </div>
   </footer>
-  <script src="scripts/main.js"></script>
+
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>
