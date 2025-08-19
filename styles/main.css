@@ -239,20 +239,23 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow);
   overflow: hidden;
   transition: transform .2s ease, box-shadow .2s ease;
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
 }
 .service-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .service-card img{
   width: 100%;
-  height: 190px;
+  height: 180px;
   object-fit: cover;
 }
 .service-card h3{
-  margin: 1rem 1rem .5rem;
+  margin: .9rem 1rem .25rem;
   color: var(--blue-700);
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 .service-card p{
-  margin: 0 1rem 1.25rem;
+  margin: 0 1rem 1rem;
   color: var(--slate-700);
 }
 
@@ -390,6 +393,50 @@ section.is-visible{
   transform: none;
 }
 
+/* --- Content card polish --- */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.25rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.card--soft {
+  background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+}
+.about-text.card,
+.physiotherapist-info.card,
+.contact-info.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+.conditions-grid.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+/* Section headers tighter style */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 1.5rem auto;
+}
+.section-header h2 {
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: .25rem;
+}
+.section-header p {
+  color: var(--slate-700);
+  margin: 0;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 980px){
   .hero-content{ grid-template-columns: 1fr; }
@@ -403,11 +450,9 @@ section.is-visible{
 /* Replace the entire mobile nav block */
 @media (max-width: 860px){
   .nav-toggle{ display: inline-block; z-index: 1001; }
-
-  /* Was: display:none; now we keep it rendered for animation */
   .primary-nav{
     position: absolute;
-    inset: 100% 0 auto 0;        /* full width, just below header */
+    inset: 100% 0 auto 0;
     background: #fff;
     padding: .5rem .75rem .85rem;
     border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -417,15 +462,12 @@ section.is-visible{
     flex-direction: column;
     gap: .25rem;
     z-index: 1000;
-
-    /* Animation (top -> bottom) */
     opacity: 0;
     transform: translateY(-12px);
     visibility: hidden;
     pointer-events: none;
     transition: transform .25s ease, opacity .25s ease, visibility 0s linear .25s;
   }
-
   .primary-nav.is-open{
     opacity: 1;
     transform: translateY(0);
@@ -433,7 +475,6 @@ section.is-visible{
     pointer-events: auto;
     transition: transform .25s ease, opacity .25s ease;
   }
-
   .primary-nav a{
     display: block;
     width: 85vw;
@@ -442,8 +483,41 @@ section.is-visible{
   }
 }
 
+/* Responsive tweaks for services/conditions */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+  .conditions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .hero-content,
+  .about-content,
+  .physiotherapist-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
 /* Small tweaks */
 @media (max-width: 480px){
   .logo-text{ font-size: 1.05rem; }
   .service-card img, .contact-image img { aspect-ratio: 16/10; height: auto; }
+}
+
+.service-image-placeholder {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--slate-100);
+  color: var(--slate-700);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  border: 2px dashed var(--slate-200);
+  text-align: center;
 }
