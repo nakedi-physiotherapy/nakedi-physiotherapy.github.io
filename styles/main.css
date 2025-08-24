@@ -1,11 +1,11 @@
 /* ===== Reset & root ===== */
 *,
 *::before,
-*::after { 
-  box-sizing: border-box; 
+*::after {
+  box-sizing: border-box;
 }
 
-html { 
+html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
@@ -21,9 +21,9 @@ body {
   font-feature-settings: "kern" 1;
 }
 
-img { 
-  max-width: 100%; 
-  display: block; 
+img {
+  max-width: 100%;
+  display: block;
   height: auto;
 }
 
@@ -31,11 +31,11 @@ img {
   /* Primary gold palette */
   --blue-900: #1e293b;
   --blue-800: #334155;
-  --blue-700: #d4a574;  /* primary - gold */
+  --blue-700: #F7941D;  /* primary - gold */
   --blue-600: #64748b;
   --blue-500: #94a3b8;  /* accent */
   --blue-100: #f8fafc;  /* light bg */
-  
+
   /* Enhanced neutral palette */
   --slate-900: #0f172a;
   --slate-800: #1e293b;
@@ -48,7 +48,7 @@ img {
   --slate-100: #f1f5f9;
   --slate-50: #f8fafc;
   --white: #ffffff;
-  
+
   /* Professional spacing */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -58,7 +58,7 @@ img {
   --space-2xl: 3rem;
   --space-3xl: 4rem;
   --space-4xl: 5rem;
-  
+
   /* Enhanced border radius */
   --radius-sm: 6px;
   --radius: 8px;
@@ -66,7 +66,7 @@ img {
   --radius-xl: 16px;
   --radius-2xl: 24px;
   --radius-full: 9999px;
-  
+
   /* Professional shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
@@ -74,7 +74,7 @@ img {
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  
+
   /* Typography scale */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -86,7 +86,7 @@ img {
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
   --text-6xl: 3.75rem;
-  
+
   /* Professional gradients */
   --gradient-gold: linear-gradient(135deg, #f7d794 0%, #d4a574 50%, #c19a5b 100%);
   --gradient-subtle: linear-gradient(135deg, var(--slate-50) 0%, var(--white) 100%);
@@ -110,40 +110,40 @@ img {
 
 /* Visually hidden */
 .sr-only {
-  position: absolute; 
-  width: 1px; 
-  height: 1px; 
-  padding: 0; 
-  margin: -1px; 
-  overflow: hidden; 
-  clip: rect(0,0,0,0); 
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
   border: 0;
 }
 
 /* Skip link */
 .skip-link {
-  position: absolute; 
-  left: -9999px; 
-  top: 0; 
-  padding: var(--space-md) var(--space-lg); 
-  background: var(--blue-700); 
-  color: var(--white); 
-  border-radius: var(--radius); 
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--blue-700);
+  color: var(--white);
+  border-radius: var(--radius);
   z-index: 9999;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s ease;
 }
-.skip-link:focus { 
-  left: var(--space-md); 
-  top: var(--space-md); 
+.skip-link:focus {
+  left: var(--space-md);
+  top: var(--space-md);
   box-shadow: var(--shadow-lg);
 }
 
 /* ===== Header / Nav ===== */
 .site-header{
-  position: sticky; 
-  top: 0; 
+  position: sticky;
+  top: 0;
   z-index: 999;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(20px);
@@ -173,10 +173,10 @@ img {
 }
 
 .logo-img{
-  width: 56px; 
-  height: 56px; 
-  border-radius: var(--radius-full); 
-  object-fit: cover; 
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
   box-shadow: var(--shadow-md);
   border: 2px solid var(--white);
 }
@@ -210,14 +210,14 @@ img {
   letter-spacing: -0.01em;
 }
 
-.primary-nav a:hover{ 
-  background: var(--blue-100); 
+.primary-nav a:hover{
+  background: var(--blue-100);
   color: var(--blue-700);
   transform: translateY(-1px);
 }
 
-.primary-nav a.active{ 
-  background: var(--blue-700); 
+.primary-nav a.active{
+  background: var(--blue-700);
   color: var(--white);
   box-shadow: var(--shadow-md);
 }
@@ -240,7 +240,7 @@ img {
 
 .nav-toggle-bar{
   display: block;
-  width: 26px; 
+  width: 26px;
   height: 3px;
   background: var(--blue-700);
   margin: 4px 0;
@@ -316,7 +316,7 @@ img {
   font-size: var(--text-base);
 }
 
-.hero-bullets li{ 
+.hero-bullets li{
   margin: var(--space-sm) 0;
   padding-left: var(--space-xl);
   position: relative;
@@ -382,13 +382,13 @@ img {
   min-height: 48px;
 }
 
-.btn:hover{ 
-  transform: translateY(-2px); 
+.btn:hover{
+  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
-.btn:active{ 
-  transform: translateY(0); 
+.btn:active{
+  transform: translateY(0);
 }
 
 .btn-primary{
@@ -425,8 +425,8 @@ img {
   box-shadow: var(--shadow-sm);
 }
 
-.btn-outline:hover{ 
-  background: var(--blue-700); 
+.btn-outline:hover{
+  background: var(--blue-700);
   color: var(--white);
   border-color: var(--blue-700);
 }
@@ -473,8 +473,8 @@ img {
 }
 
 /* ===== Enhanced About Section ===== */
-.about{ 
-  padding: clamp(4rem, 8vw, 8rem) 0; 
+.about{
+  padding: clamp(4rem, 8vw, 8rem) 0;
   background: var(--white);
   position: relative;
 }
@@ -490,7 +490,7 @@ img {
   animation: fadeInLeft 0.8s ease-out;
 }
 
-.about-text p{ 
+.about-text p{
   margin: 0 0 var(--space-lg);
   font-size: var(--text-lg);
   line-height: 1.7;
@@ -501,10 +501,10 @@ img {
   margin-bottom: var(--space-2xl);
 }
 
-.checks{ 
-  margin: 0; 
-  padding: 0; 
-  list-style: none; 
+.checks{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .checks li{
@@ -522,10 +522,10 @@ img {
 
 .checks li::before{
   content: "✓";
-  position: absolute; 
-  left: 0; 
+  position: absolute;
+  left: 0;
   top: var(--space-md);
-  color: var(--blue-700); 
+  color: var(--blue-700);
   font-weight: 900;
   font-size: var(--text-xl);
   width: 24px;
@@ -569,8 +569,8 @@ img {
 }
 
 /* ===== Professional Services Section ===== */
-.services{ 
-  padding: clamp(4rem, 8vw, 8rem) 0; 
+.services{
+  padding: clamp(4rem, 8vw, 8rem) 0;
   background: var(--slate-50);
   position: relative;
 }
@@ -678,8 +678,8 @@ img {
 }
 
 /* ===== Enhanced Physiotherapist Section ===== */
-.physiotherapist{ 
-  padding: clamp(4rem, 8vw, 8rem) 0; 
+.physiotherapist{
+  padding: clamp(4rem, 8vw, 8rem) 0;
   background: var(--white);
   position: relative;
 }
@@ -746,8 +746,8 @@ img {
   display: inline-block;
 }
 
-.physiotherapist-info p{ 
-  margin: 0 0 var(--space-lg); 
+.physiotherapist-info p{
+  margin: 0 0 var(--space-lg);
   color: var(--slate-600);
   line-height: 1.7;
   font-size: var(--text-lg);
@@ -758,8 +758,8 @@ img {
 }
 
 /* ===== Enhanced Conditions Section ===== */
-.conditions{ 
-  padding: clamp(4rem, 8vw, 8rem) 0; 
+.conditions{
+  padding: clamp(4rem, 8vw, 8rem) 0;
   background: var(--slate-50);
   position: relative;
 }
@@ -828,8 +828,8 @@ img {
 }
 
 .condition-category ul{
-  list-style: none; 
-  padding: 0; 
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
@@ -843,8 +843,8 @@ img {
   line-height: 1.5;
 }
 
-.condition-category li:last-child{ 
-  border-bottom: 0; 
+.condition-category li:last-child{
+  border-bottom: 0;
 }
 
 .condition-category li:hover{
@@ -854,10 +854,10 @@ img {
 
 .condition-category li::before{
   content: "✓";
-  position: absolute; 
-  left: 0; 
+  position: absolute;
+  left: 0;
   top: var(--space-md);
-  color: var(--blue-700); 
+  color: var(--blue-700);
   font-weight: 900;
   width: 20px;
   height: 20px;
@@ -877,8 +877,8 @@ img {
 }
 
 /* ===== Enhanced Contact Section ===== */
-.contact{ 
-  padding: clamp(4rem, 8vw, 8rem) 0; 
+.contact{
+  padding: clamp(4rem, 8vw, 8rem) 0;
   background: var(--white);
   position: relative;
 }
@@ -927,8 +927,8 @@ img {
   border-radius: var(--radius-full);
 }
 
-.contact-item p{ 
-  margin: 0 0 var(--space-xs); 
+.contact-item p{
+  margin: 0 0 var(--space-xs);
   color: var(--slate-600);
   font-size: var(--text-base);
   line-height: 1.6;
@@ -941,16 +941,16 @@ img {
   transition: all 0.2s ease;
 }
 
-.contact-item a:hover{ 
+.contact-item a:hover{
   color: var(--blue-800);
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
-.contact-cta{ 
-  margin-top: var(--space-xl); 
-  display: flex; 
-  gap: var(--space-md); 
-  flex-wrap: wrap; 
+.contact-cta{
+  margin-top: var(--space-xl);
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
 }
 
 .contact-image{
@@ -1020,21 +1020,21 @@ img {
 
 .back-to-top{
   display: inline-flex;
-  width: 44px; 
+  width: 44px;
   height: 44px;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   border-radius: var(--radius-full);
   background: var(--blue-700);
-  color: var(--white); 
-  text-decoration: none; 
+  color: var(--white);
+  text-decoration: none;
   font-weight: 900;
   font-size: var(--text-lg);
   transition: all 0.3s ease;
   box-shadow: var(--shadow-lg);
 }
 
-.back-to-top:hover{ 
+.back-to-top:hover{
   background: var(--blue-600);
   transform: translateY(-2px);
   box-shadow: var(--shadow-xl);
@@ -1128,44 +1128,44 @@ section.is-visible{
 
 /* Large tablets and small laptops */
 @media (max-width: 1024px){
-  .hero-content{ 
-    grid-template-columns: 1fr; 
+  .hero-content{
+    grid-template-columns: 1fr;
     gap: var(--space-3xl);
     text-align: center;
   }
-  
-  .about-content{ 
-    grid-template-columns: 1fr; 
+
+  .about-content{
+    grid-template-columns: 1fr;
     gap: var(--space-3xl);
   }
-  
+
   .physiotherapist-content{
     grid-template-columns: 1fr;
     gap: var(--space-3xl);
     text-align: center;
   }
-  
-  .contact-content{ 
-    grid-template-columns: 1fr; 
+
+  .contact-content{
+    grid-template-columns: 1fr;
     gap: var(--space-3xl);
   }
-  
-  .services-grid { 
-    grid-template-columns: repeat(2, 1fr); 
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .conditions-grid { 
-    grid-template-columns: repeat(2, 1fr); 
+
+  .conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Mobile navigation */
 @media (max-width: 860px){
-  .nav-toggle{ 
-    display: inline-flex; 
-    z-index: 1001; 
+  .nav-toggle{
+    display: inline-flex;
+    z-index: 1001;
   }
-  
+
   .primary-nav{
     position: absolute;
     inset: 100% 0 auto 0;
@@ -1184,14 +1184,14 @@ section.is-visible{
     pointer-events: none;
     transition: all 0.3s ease;
   }
-  
+
   .primary-nav.is-open{
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
     pointer-events: auto;
   }
-  
+
   .primary-nav a{
     display: block;
     width: 100%;
@@ -1207,32 +1207,32 @@ section.is-visible{
   .container{
     padding-inline: var(--space-lg);
   }
-  
+
   .hero{
     padding: clamp(3rem, 6vw, 5rem) 0;
   }
-  
+
   .hero-text h1{
     font-size: clamp(2rem, 6vw, 3rem);
   }
-  
+
   .hero-buttons{
     justify-content: center;
   }
-  
-  .services-grid { 
-    grid-template-columns: 1fr; 
+
+  .services-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .conditions-grid { 
-    grid-template-columns: 1fr; 
+
+  .conditions-grid {
+    grid-template-columns: 1fr;
   }
-  
+
   .physiotherapist-image img{
     width: 240px;
     height: 240px;
   }
-  
+
   .section-header h2{
     font-size: clamp(1.75rem, 5vw, 2.5rem);
   }
@@ -1243,56 +1243,56 @@ section.is-visible{
   .container{
     padding-inline: var(--space-md);
   }
-  
-  .logo-text{ 
-    font-size: var(--text-lg); 
+
+  .logo-text{
+    font-size: var(--text-lg);
   }
-  
+
   .hero{
     padding: var(--space-4xl) 0 var(--space-3xl);
   }
-  
+
   .hero-text h1{
     font-size: clamp(1.75rem, 8vw, 2.5rem);
   }
-  
+
   .hero-text p{
     font-size: var(--text-lg);
   }
-  
+
   .btn{
     padding: var(--space-md) var(--space-xl);
     font-size: var(--text-sm);
   }
-  
+
   .hero-buttons{
     flex-direction: column;
     align-items: center;
   }
-  
+
   .hero-buttons .btn{
     width: 100%;
     max-width: 280px;
   }
-  
-  .service-card img, 
-  .contact-image img { 
-    aspect-ratio: 16/10; 
+
+  .service-card img,
+  .contact-image img {
+    aspect-ratio: 16/10;
   }
-  
+
   .service-image-placeholder{
     height: 180px;
   }
-  
+
   .physiotherapist-image img{
     width: 200px;
     height: 200px;
   }
-  
+
   .section-header{
     margin-bottom: var(--space-2xl);
   }
-  
+
   .footer-inner{
     flex-direction: column;
     text-align: center;
@@ -1318,7 +1318,7 @@ section.is-visible{
   .nav-toggle {
     display: none;
   }
-  
+
   .hero,
   .about,
   .services,
@@ -1328,7 +1328,7 @@ section.is-visible{
     padding: 2rem 0;
     background: white !important;
   }
-  
+
   .hero-content,
   .about-content,
   .physiotherapist-content,
