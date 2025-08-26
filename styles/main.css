@@ -635,6 +635,14 @@ img {
   transition: transform 0.3s ease;
 }
 
+.service-image {
+  object-position: 10%;
+}
+
+.image-card-sports {
+  object-position: top;
+}
+
 .service-card:hover img{
   transform: scale(1.05);
 }
