@@ -163,7 +163,6 @@ img {
 .logo{
   display: inline-flex;
   align-items: center;
-  gap: var(--space-md);
   text-decoration: none;
   transition: transform 0.2s ease;
 }
