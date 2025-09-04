@@ -643,6 +643,10 @@ img {
   object-position: top;
 }
 
+.image-orthopedics {
+  object-position: bottom;
+}
+
 .service-card:hover img{
   transform: scale(1.05);
 }
