@@ -8,6 +8,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -19,6 +20,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" 1;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 img {
@@ -148,7 +152,9 @@ img {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--slate-200);
+  box-shadow: 0 1px 3px rgba(2,12,36,0.03);
   transition: all 0.3s ease;
+  will-change: box-shadow, background;
 }
 
 .header-content{
@@ -476,6 +482,7 @@ img {
 .section-header p{
   color: var(--slate-600);
   margin: 0;
+  padding-top: var(--space-lg);
   font-size: var(--text-lg);
   line-height: 1.6;
   max-width: 600px;
@@ -1292,6 +1299,20 @@ section.is-visible{
     grid-template-columns: 1fr;
   }
 
+  .conditions-grid.card {
+    padding: var(--space-lg);
+  }
+
+  .condition-category {
+    padding: var(--space-lg);
+  }
+
+  .about-image::before,
+  .contact-image::before {
+    right: -10px;
+    bottom: -10px;
+  }
+
   .physiotherapist-image img{
     width: 240px;
     height: 240px;
@@ -1305,8 +1326,20 @@ section.is-visible{
 /* Mobile phones */
 @media (max-width: 480px){
   .container{
-    width: min(1200px, 96vw);
-    padding-inline: var(--space-sm);
+    width: min(1200px, 100vw);
+    padding-inline: var(--space-md);
+  }
+
+  .conditions .container {
+    padding-inline: 0;
+  }
+
+  .section-header {
+    padding-inline: var(--space-md);
+  }
+
+  .conditions .section-header {
+    padding-inline: var(--space-md);
   }
 
   .header-content{
@@ -1328,6 +1361,30 @@ section.is-visible{
   .contact {
     padding: clamp(2.5rem, 4vw, 4rem) 0;
     scroll-margin-top: 70px;
+  }
+
+  .conditions-grid.card {
+    padding: var(--space-md);
+    margin-inline: 0;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .condition-category {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .condition-category h3 {
+    font-size: var(--text-lg);
+  }
+
+  .about-image::before,
+  .contact-image::before {
+    right: 0;
+    bottom: 0;
+    top: 10px;
+    left: 10px;
   }
 
   .hero{

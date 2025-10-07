@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
   const headerUpdate = () => {
     const scrolled = window.scrollY > 8;
-    header.style.background = scrolled ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.85)';
-    header.style.boxShadow = scrolled ? '0 4px 16px rgba(2,12,36,0.06)' : 'none';
+    header.style.background = scrolled ? 'rgba(255,255,255,0.98)' : 'rgba(255,255,255,0.95)';
+    header.style.boxShadow = scrolled ? '0 4px 16px rgba(2,12,36,0.08)' : '0 1px 3px rgba(2,12,36,0.03)';
   };
   headerUpdate();
   window.addEventListener('scroll', headerUpdate, { passive: true });
