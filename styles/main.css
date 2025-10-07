@@ -1318,6 +1318,11 @@ section.is-visible{
     height: 240px;
   }
 
+  .physiotherapist-image::before{
+    width: 280px;
+    height: 280px;
+  }
+
   .section-header h2{
     font-size: clamp(1.75rem, 5vw, 2.5rem);
   }
@@ -1330,7 +1335,8 @@ section.is-visible{
     padding-inline: var(--space-md);
   }
 
-  .conditions .container {
+  .conditions .container,
+  .contact .container {
     padding-inline: 0;
   }
 
@@ -1338,7 +1344,8 @@ section.is-visible{
     padding-inline: var(--space-md);
   }
 
-  .conditions .section-header {
+  .conditions .section-header,
+  .contact .section-header {
     padding-inline: var(--space-md);
   }
 
@@ -1369,6 +1376,58 @@ section.is-visible{
     border-radius: 0;
     border-left: 0;
     border-right: 0;
+  }
+
+  .contact-info.card {
+    padding: var(--space-md);
+    margin-inline: 0;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .contact-content {
+    gap: var(--space-xl);
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .contact-image {
+    padding-inline: var(--space-md);
+    text-align: center;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .contact-image::before {
+    left: var(--space-md);
+    right: var(--space-md);
+    top: 10px;
+    bottom: -10px;
+  }
+
+  .contact-image img {
+    margin-inline: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-item {
+    padding: var(--space-lg) var(--space-md);
+    word-break: break-word;
+  }
+
+  .contact-cta {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .contact-cta .btn {
+    width: 100%;
   }
 
   .condition-category {
@@ -1426,6 +1485,25 @@ section.is-visible{
   .physiotherapist-image img{
     width: 200px;
     height: 200px;
+  }
+
+  .physiotherapist-image::before{
+    width: 240px;
+    height: 240px;
+  }
+
+  .contact-image {
+    padding-inline: var(--space-lg);
+    margin: 0;
+  }
+
+  .contact-image::before {
+    display: none;
+  }
+
+  .contact-image img {
+    width: 100%;
+    max-width: 100%;
   }
 
   .section-header{
