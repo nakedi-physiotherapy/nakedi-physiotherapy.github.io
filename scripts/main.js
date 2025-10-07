@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
-      
+
       // Update active state immediately
       navLinks.forEach(a => {
         a.classList.remove('active');
@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (link.classList.contains('primary-nav') || link.closest('.primary-nav')) {
         link.classList.add('active');
       }
-      
+
       scrollToWithOffset(target);
       history.pushState(null, '', href); // optional: keeps hash in URL
       closeMobileNav();
-      
+
       // Re-highlight after scroll completes
       setTimeout(highlightNav, 100);
     });
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      
+
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         currentId = section.id || 'home';
       }
