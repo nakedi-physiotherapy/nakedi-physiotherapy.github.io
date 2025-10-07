@@ -9,6 +9,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
@@ -23,6 +24,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
+  min-height: 100%;
 }
 
 img {
@@ -147,10 +149,12 @@ img {
 /* ===== Header / Nav ===== */
 .site-header{
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   z-index: 999;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--slate-200);
   box-shadow: 0 1px 3px rgba(2,12,36,0.03);
   transition: all 0.3s ease;
@@ -1195,6 +1199,17 @@ section.is-visible{
 
 /* Mobile navigation */
 @media (max-width: 860px){
+  .site-header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .hero {
+    margin-top: 80px;
+  }
+
   .header-content{
     grid-template-columns: auto auto;
     justify-content: space-between;
