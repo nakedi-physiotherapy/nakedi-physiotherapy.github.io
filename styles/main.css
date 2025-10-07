@@ -148,9 +148,11 @@ img {
 
 /* ===== Header / Nav ===== */
 .site-header{
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 999;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(20px);
@@ -271,6 +273,7 @@ img {
 
 /* ===== Enhanced Hero Section ===== */
 .hero{
+  margin-top: 80px;
   padding: clamp(4rem, 8vw, 8rem) 0 clamp(3rem, 6vw, 6rem);
   background: var(--gradient-hero);
   position: relative;
@@ -496,7 +499,7 @@ img {
 
 /* ===== Enhanced About Section ===== */
 .about{
-  padding: clamp(4rem, 8vw, 8rem) 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(4rem, 8vw, 8rem);
   background: var(--white);
   position: relative;
 }
@@ -592,7 +595,7 @@ img {
 
 /* ===== Professional Services Section ===== */
 .services{
-  padding: clamp(4rem, 8vw, 8rem) 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(4rem, 8vw, 8rem);
   background: var(--slate-50);
   position: relative;
 }
@@ -717,7 +720,7 @@ img {
 
 /* ===== Enhanced Physiotherapist Section ===== */
 .physiotherapist{
-  padding: clamp(4rem, 8vw, 8rem) 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(4rem, 8vw, 8rem);
   background: var(--white);
   position: relative;
 }
@@ -797,7 +800,7 @@ img {
 
 /* ===== Enhanced Conditions Section ===== */
 .conditions{
-  padding: clamp(4rem, 8vw, 8rem) 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(4rem, 8vw, 8rem);
   background: var(--slate-50);
   position: relative;
 }
@@ -916,7 +919,7 @@ img {
 
 /* ===== Enhanced Contact Section ===== */
 .contact{
-  padding: clamp(4rem, 8vw, 8rem) 0;
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(4rem, 8vw, 8rem);
   background: var(--white);
   position: relative;
 }
@@ -1204,10 +1207,6 @@ section.is-visible{
     width: 100%;
     left: 0;
     right: 0;
-  }
-
-  .hero {
-    margin-top: 80px;
   }
 
   .header-content{
