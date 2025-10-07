@@ -17,9 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
+      
+      // Update active state immediately
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+      });
+      if (link.classList.contains('primary-nav') || link.closest('.primary-nav')) {
+        link.classList.add('active');
+      }
+      
       scrollToWithOffset(target);
       history.pushState(null, '', href); // optional: keeps hash in URL
       closeMobileNav();
+      
+      // Re-highlight after scroll completes
+      setTimeout(highlightNav, 100);
     });
   });
 
@@ -30,11 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function highlightNav() {
     let currentId = '';
     const headerOffset = getHeaderOffset();
+    const scrollPosition = window.scrollY + headerOffset + 50; // Add buffer for better detection
 
     sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      const topOffset = rect.top + window.scrollY - headerOffset;
-      if (window.scrollY >= topOffset && window.scrollY < topOffset + section.offsetHeight) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         currentId = section.id || 'home';
       }
     });
